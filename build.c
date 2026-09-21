@@ -269,6 +269,8 @@ formatstatus(char *buf, size_t len)
 static void
 printstatus(struct edge *e, struct string *cmd)
 {
+	if (buildopts.quiet)
+		return;
 	struct string *description;
 	char status[256];
 

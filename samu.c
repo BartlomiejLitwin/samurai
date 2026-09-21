@@ -151,7 +151,9 @@ main(int argc, char *argv[])
 	ARGBEGIN {
 	case '-':
 		arg = EARGF(usage());
-		if (strcmp(arg, "version") == 0) {
+		if (strcmp(arg, "quiet") == 0) {
+			buildopts.quiet = true;
+		} else if (strcmp(arg, "version") == 0) {
 			printf("%d.%d.0\n", ninjamajor, ninjaminor);
 			return 0;
 		} else if (strcmp(arg, "verbose") == 0) {
